@@ -7,7 +7,7 @@ Cense can help Online Ecommerce Stores Owners in Capturing Leads and Provide Exc
 Under your root folder, run the following command lines:
 
 - composer require akshaybadhe/cense-ai-chatbot-test
-- php bib/magento setup:upgrade
+- php bin/magento setup:upgrade
 - php bin/magento setup:di:compile
 - php bin/magento cache:flush
 
