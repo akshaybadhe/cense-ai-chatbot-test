@@ -2,7 +2,7 @@
 
 Cense AI provides small and medium sized businesses (SMBs) with Conversational AI solutions to drive revenue to enhance buying journey, improve customer service, automate conversations and multiply customer interactions. The platform enables real-time customer communication through text messaging and various messenger applications for millions of online shoppers.
 
-Cense assistant(chatbot) can easily be installed, customized and deployed without any coding, saving businesses a considerable amount of time and money. Cense assistant can be easily configured matching the style(fonts/colors) of the business.
+Cense assistant(Chatbot) can easily be installed, customized and deployed without any coding, saving businesses a considerable amount of time and money. Cense assistant can be easily configured matching the style(fonts/colors) of the business.
 
 Products with local/traditional names can be easily searched, so that customers don’t spend time going through the catalogs and products that they are not interested in. Products for up-sell & cross-sell can also be displayed to customers.
 Business owners can easily configure the way list of products are displayed, be it random or latest or popular.
