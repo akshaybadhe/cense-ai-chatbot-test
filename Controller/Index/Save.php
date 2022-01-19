@@ -23,8 +23,6 @@ class Save extends \Magento\Framework\App\Action\Action
        $product_ids = explode(',', $productId );
        $count       = count( $product_ids );
        $number      = 0;
-        // echo($product_ids[0]);
-        echo(count($product_ids));
        if(count($product_ids)>0)
        {
         
