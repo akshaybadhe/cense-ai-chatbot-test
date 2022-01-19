@@ -28,29 +28,28 @@ class Save extends \Magento\Framework\App\Action\Action
         
     
         foreach ( $product_ids as $product_id ) {
-                echo($product_id);
-        $obj = \Magento\Framework\App\ObjectManager::getInstance();
-        
-        $product = $obj->create('\Magento\Catalog\Model\Product')->load($product_id);
+            $obj = \Magento\Framework\App\ObjectManager::getInstance();
+            
+            $product = $obj->create('\Magento\Catalog\Model\Product')->load($product_id);
 
-        $cart = $obj->create('Magento\Checkout\Model\Cart');    
-        $params = array();      
-        $options = array();
-        $params['qty'] = 1;
-        $params['product'] = $product_id;
+            $cart = $obj->create('Magento\Checkout\Model\Cart');    
+            $params = array();      
+            $options = array();
+            $params['qty'] = 1;
+            $params['product'] = $product_id;
 
-        /*foreach ($product->getOptions() as $o) 
-        {       
-            foreach ($o->getValues() as $value) 
-            {
-                $options[$value['option_id']] = $value['option_type_id'];
+            /*foreach ($product->getOptions() as $o) 
+            {       
+                foreach ($o->getValues() as $value) 
+                {
+                    $options[$value['option_id']] = $value['option_type_id'];
 
-            }           
-        }*/
+                }           
+            }*/
 
-        //$params['options'] = $options;
-        $cart->addProduct($product_id, $params);
-        $cart->save();
+            //$params['options'] = $options;
+            $cart->addProduct($product_id, $params);
+            $cart->save();
         }
         $storeManager = $obj->get('\Magento\Store\Model\StoreManagerInterface');
         $baseURL=$storeManager->getStore()->getBaseUrl();
