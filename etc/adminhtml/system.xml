@@ -29,6 +29,11 @@
                     <depends>
                         <field id="*/censeaiinc/enabled">1</field>
                     </depends>
+                    <comment>
+<![CDATA[
+<p style="font-weight: bold;">To get your license key, register yourself on <a href="https://portal.cense.ai/bot/register" target="_blank">Cense AI</a></p> 
+]]>
+</comment>
                 </field>
               
             </group>

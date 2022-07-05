@@ -37,28 +37,17 @@ class Save extends \Magento\Framework\App\Action\Action
             $options = array();
             $params['qty'] = 1;
             $params['product'] = $product_id;
-
-            /*foreach ($product->getOptions() as $o) 
-            {       
-                foreach ($o->getValues() as $value) 
-                {
-                    $options[$value['option_id']] = $value['option_type_id'];
-
-                }           
-            }*/
-
-            //$params['options'] = $options;
+        
             $cart->addProduct($product_id, $params);
             $cart->save();
         }
-        $storeManager = $obj->get('\Magento\Store\Model\StoreManagerInterface');
-        $baseURL=$storeManager->getStore()->getBaseUrl();
-
-        $cartUrl=$baseURL.'checkout/cart/';
-
-
-        echo "<script> url = '".$cartUrl."'; window.location.replace(url);</script>";
-        exit;
+        $resultPage = $this->_pageFactory->create();
+        $resultPage->getConfig()->getTitle()->prepend(__('Cense'));
+        $block = $resultPage->getLayout()
+                ->createBlock('Censeaiinc\Cense\Block\Customerinfo')
+                ->setTemplate('Censeaiinc_Cense::info.phtml')
+                ->toHtml();
+        $this->getResponse()->setBody($block);
 
     }
 

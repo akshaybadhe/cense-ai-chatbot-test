@@ -11,20 +11,26 @@ class Customerinfo  extends \Magento\Framework\View\Element\Template
     public function __construct(
      \Magento\Framework\View\Element\Template\Context $context,
      \Magento\Framework\App\Http\Context $httpContext,
+    //  \Magento\Framework\Session\SessionManagerInterface $session,
      \Magento\Customer\Model\Session $customerSession,
      array $data = []
     ) {
      $this->httpContext = $httpContext;
      $this->_customerSession = $customerSession;
+    //  $this->session = $session;
      parent::__construct($context, $data);
     }
 
     public function getCustomerIsLoggedIn()
     {  
-         
+      //session_start();   
       $six_digit_random_number = random_int(100000, 999999);
-      $this->_customerSession->setCustomerRandomName($six_digit_random_number);
-      return (bool)$this->httpContext->getValue(\Magento\Customer\Model\Context::CONTEXT_AUTH);
+
+      if(!isset($_SESSION["number"]) ){
+          $_SESSION["number"] = $six_digit_random_number;
+      }
+
+     return (bool)$this->httpContext->getValue(\Magento\Customer\Model\Context::CONTEXT_AUTH);
     }
 
 
@@ -49,7 +55,13 @@ class Customerinfo  extends \Magento\Framework\View\Element\Template
     public function getUserName()
     {
       return $this->_customerSession->getCustomerRandomName();
+      //  $six_digit_random_number = random_int(100000, 999999);
+      //  $this->session->start();
+        
+      //   if(strlen($this->session->getUserName())<1)
+      //   {
+      //     $this->session->setUserName($six_digit_random_number);
+      //   } 
+      //  return  $this->session->getUserName();
     }
-
-
 }
